@@ -79,7 +79,9 @@ A aula segue o framework pedagógico estruturado em 4 etapas consecutivas:
 ---
 
 ## 5. Recursos Didáticos & Tecnologias
-- **Apresentação Interativa em React + Vite:** 23 slides focados e visuais com diagramas SVG, tabelas arquiteturais de referência, renderizador KaTeX, atalhos de teclado e 5 componentes interativos.
+- **Apresentação de Slides:**
+  - Versão Web Interativa (React + Vite, 23 slides, KaTeX e 5 simuladores interativos).
+  - Versão em PDF para Impressão e Leitura Offline (`aula_01_apresentacao.pdf`).
 - **Roteiro do Professor (`falas_apresentador.md`):** Script completo de narração slide a slide.
 - **Notebooks Práticos Executáveis (Google Colab):**
   - `aula_01_cnn_architectures.ipynb`: ResNet-34 do Zero e Transfer Learning com CIFAR-10.
