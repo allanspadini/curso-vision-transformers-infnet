@@ -1,0 +1,24 @@
+{
+  "name": "curso-vision-transformers-infnet",
+  "version": "1.0.0",
+  "description": "Curso de Pós-Graduação em Visão Computacional com CNNs e Transformers - Faculdade Infnet",
+  "type": "module",
+  "scripts": {
+    "build:aula01": "cd aula_01_cnn_architectures/apresentacao && npm run build",
+    "build": "node build.js",
+    "preview": "npx serve dist"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0"
+  },
+  "keywords": [
+    "deep-learning",
+    "computer-vision",
+    "pytorch",
+    "infnet",
+    "cnn",
+    "vision-transformers"
+  ],
+  "author": "Faculdade Infnet",
+  "license": "MIT"
+}
