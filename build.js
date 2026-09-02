@@ -41,6 +41,12 @@ execSync('npm run build', { cwd: aula02Dir, stdio: 'inherit' });
 const aula02Dist = path.join(aula02Dir, 'dist');
 const destAula02 = path.join(DIST_DIR, 'aula_02_transformers');
 fs.copySync(aula02Dist, destAula02);
+
+const pdfPath02 = path.join(ROOT_DIR, 'aula_02_transformers', 'aula_02_apresentacao.pdf');
+if (fs.existsSync(pdfPath02)) {
+  fs.copySync(pdfPath02, path.join(destAula02, 'aula_02_apresentacao.pdf'));
+  console.log('✅ PDF da Aula 02 copiado para dist/aula_02_transformers/aula_02_apresentacao.pdf');
+}
 console.log('✅ Apresentação da Aula 02 copiada para dist/aula_02_transformers/');
 
 // 4. Copiar arquivos raiz para dist/

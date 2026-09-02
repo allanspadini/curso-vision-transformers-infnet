@@ -83,8 +83,9 @@ A aula é estruturada no framework pedagógico de 4 etapas consecutivas:
 ---
 
 ## 5. Recursos Didáticos & Tecnologias
-- **Apresentação de Slides Interativa:**
+- **Apresentação de Slides Interativa & Versão em PDF:**
   - Aplicação React + Vite (26 slides, KaTeX, diagramas SVG em alta resolução e 5 simuladores interativos).
+  - Versão em PDF para Leitura Offline e Impressão (`aula_02_apresentacao.pdf`).
   - Teleprompter integrado com as falas do professor (Atalho `N`).
   - Navegação em grade (Atalho `G`) e modo Tela Cheia (Atalho `F`).
 - **Roteiro do Professor (`falas_apresentador.md`):** Script completo de narração slide a slide.
