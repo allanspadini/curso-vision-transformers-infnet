@@ -32,6 +32,17 @@ if (fs.existsSync(pdfPath)) {
 }
 console.log('✅ Apresentação da Aula 01 copiada para dist/aula_01_cnn_architectures/');
 
+// 3.1 Build da Apresentação da Aula 02
+const aula02Dir = path.join(ROOT_DIR, 'aula_02_transformers', 'apresentacao');
+console.log('📦 Compilando apresentação da Aula 02 (React + Vite)...');
+execSync('npm run build', { cwd: aula02Dir, stdio: 'inherit' });
+
+// 3.2 Copiar dist da Aula 02 para dist/aula_02_transformers
+const aula02Dist = path.join(aula02Dir, 'dist');
+const destAula02 = path.join(DIST_DIR, 'aula_02_transformers');
+fs.copySync(aula02Dist, destAula02);
+console.log('✅ Apresentação da Aula 02 copiada para dist/aula_02_transformers/');
+
 // 4. Copiar arquivos raiz para dist/
 fs.copySync(path.join(ROOT_DIR, 'index.html'), path.join(DIST_DIR, 'index.html'));
 if (fs.existsSync(path.join(ROOT_DIR, 'infnet_logo.png'))) {

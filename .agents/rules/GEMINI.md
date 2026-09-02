@@ -1,5 +1,32 @@
-Este é um projeto de aulas usando PyTorch para um curso de pós-graduação EAD da Faculdade Infnet. O nome da disciplina é Visão Computacional com CNNs e Transformers. Devemos passar esses conceitos complexos da forma mais didática possível, utilizando uma metodologia de apresentação da situação-problema → solução → teoria. 
-Para as aulas, o foco principal é construir exemplos práticos com dados reais do mundo real (fontes como Kaggle, Hugging Face e TorchVision Datasets).
+Este é um projeto de aulas usando PyTorch para um curso de pós-graduação EAD da Faculdade Infnet. O nome da disciplina é **Visão Computacional com CNNs e Transformers**. 
+
+Devemos passar conceitos avançados e complexos com o máximo de clareza didática e profundidade técnica, utilizando estritamente a metodologia **Situação-Problema do Mundo Real ➔ Solução de Engenharia ➔ Teoria Rigorosa**.
+
+---
+
+### 🎯 Metodologia Pedagógica Central: Problema ➔ Solução ➔ Teoria
+
+Todo conceito, módulo arquitetural ou técnica deve ser introduzido seguindo rigorosamente estas 3 etapas:
+
+1. **1. Situação-Problema do Mundo Real (A Dor Prática)**:
+   - **Nunca introduzir teoria no vácuo ou fórmulas abstratas sem motivação concreta.**
+   - Começar SEMPRE com um gargalo real enfrentado em projetos e na indústria:
+     - *Exemplos:* Saturação de gradientes ao multiplicar vetores em alta dimensão ($d_k=512$); palavras raras explodindo o vocabulário (erros de OOV); degradação de acurácia ao empilhar camadas profundas em CNNs; perda de detalhes espaciais finos em segmentação de imagens médicas; lentidão e custo quadrático de memória GPU $O(T^2)$ em contextos longos; impossibilidade de paralelizar RNNs no treino; etc.
+
+2. **2. Solução de Engenharia (A Sacada Prática & Intuição)**:
+   - Apresentar a solução conceitual e o insight de design criado pelos autores para contornar o problema:
+     - *Exemplos:* Fator de escala $1/\sqrt{d_k}$ para estabilizar a variância; algoritmo Byte-Pair Encoding (BPE); atalhos residuais $x + F(x)$ na ResNet; conexões densas de atalho na U-Net; projeções em subespaços de Query/Key/Value; paralelização com *Teacher Forcing* e máscara causal; computação em blocos SRAM no FlashAttention; fatiamento de imagens em patches no ViT.
+
+3. **3. Teoria e Formalismo Rigoroso (Matemática, Tensores e Código)**:
+   - Formalizar o conceito com rigor matemático completo, rastreamento de tensores em PyTorch ($[B, T, d_{\text{model}}]$, $[B, h, T, d_k]$, etc.), formulação algébrica, derivadas parciais e implementação prática.
+
+---
+
+### 🧠 Profundidade Conceitual vs Abstração Visual dos Slides
+
+Para manter a apresentação dinâmica e o conteúdo denso:
+- **Slides (Visual Puro & Sem Poluição)**: O slide deve conter **apenas diagramas amplos, tensores, gráficos e fluxos visuais limpos**. Não utilize blocos de texto explicativos, parágrafos ou listas de justificativas nos slides.
+- **Falas do Apresentador (`falas_apresentador.md` e `notes` no `slidesData.js`) & Notebooks (`.ipynb`) (Profundidade Máxima)**: Todo o aprofundamento conceitual, analogias intuitivas, rastreamento passo a passo de tensores, diferenciações cruciais (ex: treino paralelo via *Teacher Forcing* vs inferência autorregressiva token a token, papéis das matrizes $Q, K, V$, mecânica de backpropagation) devem estar **completamente detalhados nas falas do professor**. Nunca seja superficial nas falas!
 
 ---
 
@@ -82,6 +109,8 @@ Cada slide no arquivo `slidesData.js` deve possuir:
 - Propriedades específicas do tipo (`steps`, `cardLeft`/`cardRight`, `component`, `formula`, `variables`, `quizQuestions`).
 
 #### 6. Diretrizes para Visualizações & Componentes
+- **Foco Visual Absoluto nos Slides**: Os slides devem ser primariamente visuais. **Não coloque blocos de texto explicativos, parágrafos ou listas longas nos slides**. Todo o aprofundamento teórico, justificativas conceituais e detalhes devem residir nas **falas do apresentador** (`falas_apresentador.md` e `notes` no `slidesData.js`).
+- **Diagramas e Figuras em Destaque**: Quando um slide apresentar uma arquitetura ou diagrama técnico, a figura/SVG deve ocupar a área principal do slide em tamanho amplo e legível, sem ser comprimida por cards laterais de texto.
 - **Evitar Animações 3D Pesadas/Genéricas**: Em vez de WebGL/Three.js excessivo, priorizar diagramas vetoriais SVG claros, tabelas arquiteturais estruturadas (Camada, Tipo, Tamanho de Entrada, Kernel/Stride, Tamanho de Saída, Parâmetros) e fluxo em cascata.
 - **Divisão Didática de Arquiteturas Complexas**:
   1. *Slide 1*: A Anatomia do Bloco Construtivo Isolado (ex: Módulo Inception, BasicBlock Residual, Patch Attention).
@@ -90,9 +119,10 @@ Cada slide no arquivo `slidesData.js` deve possuir:
 - **Componentes Interativos**: Cada aula deve conter de 3 a 5 laboratórios interativos em React (simuladores de parâmetros, seletor de trade-offs, visualizadores de tensores e quiz final).
 
 #### 7. Diretrizes de Qualidade e Sincronização
-- **Baixa densidade de texto por slide**: Prefira tópicos curtos, cards visuais, badges e ícones.
+- **Zero Poluição Visual / Baixíssima densidade de texto por slide**: Prefira rótulos visuais, badges de dimensões e ícones discretos integrados ao próprio diagrama.
 - **Vários slides por aula**: Divida o conteúdo em 18 a 25 slides por apresentação.
-- **Sincronia Total de Documentos**: Sempre que um slide for adicionado ou removido, sincronize simultaneamente: `slidesData.js`, `falas_apresentador.md` e `plano_aula.md`.
+- **Sem slide de síntese/resumo final**: Não é necessário ter um slide de síntese da aula no encerramento; a aula pode concluir diretamente com o Quiz Interativo de Fixação ou no último conteúdo prático.
+- **Sincronia Total de Documentos**: Sempre que um slide for adicionado, removido ou alterado, sincronize simultaneamente: `slidesData.js`, `falas_apresentador.md` e `plano_aula.md`.
 - **Verificação Visual**: Sempre rode `npm run build` para garantir integridade e 0 erros de compilação.
 
 ---

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build:aula01": "cd aula_01_cnn_architectures/apresentacao && npm run build",
+    "build:aula02": "cd aula_02_transformers/apresentacao && npm run build",
     "build": "node build.js",
     "preview": "npx serve dist"
   },

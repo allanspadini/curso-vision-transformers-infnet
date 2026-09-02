@@ -181,16 +181,25 @@ A AlexNet consolidou os 4 pilares modernos: a função de ativação ReLU (que t
     title: 'GoogLeNet: A Anatomia do Módulo Inception',
     subtitle: 'Extração multirresolução em 4 ramos paralelos com redução de dimensão 1×1 e concatenação de profundidade',
     component: 'InceptionModuleVisualizer',
-    notes: `Em 2014, o Google apresentou o GoogLeNet, vencedor do ImageNet com apenas 6.8 milhões de parâmetros.
+    notes: `Em 2014, pesquisadores do Google liderados por Christian Szegedy apresentaram o GoogLeNet (ou Inception-v1), vencedor da competição ImageNet com uma marca histórica: atingiu 6.7% de erro Top-5 utilizando apenas 6.8 milhões de parâmetros — quase dez vezes menos pesos que a AlexNet!
 
-A grande inovação foi o Módulo Inception, demonstrado no diagrama acima:
-Em vez de tentar adivinhar qual tamanho de filtro é ideal (1x1, 3x3 ou 5x5), a rede executa 4 ramos em paralelo:
-- Ramo 1: Convolução 1x1 direta;
-- Ramo 2: Convolução 1x1 de redução seguida de convolução 3x3;
-- Ramo 3: Convolução 1x1 de redução seguida de convolução 5x5;
-- Ramo 4: Max Pooling 3x3 seguido de convolução 1x1 de redução.
+O grande segredo dessa eficiência está no bloco construtivo que vemos em destaque na tela: o Módulo Inception.
 
-Como todos os ramos usam stride 1 e same padding, as saídas têm exatamente a mesma altura e largura, sendo empilhadas na operação Depth Concat ao final.`
+A motivação original foi solucionar um dilema clássico no design de redes convolucionais: qual tamanho de filtro devemos escolher para cada camada?
+- Filtros 1x1 são excelentes para combinar correlações pontuais entre canais na mesma posição espacial;
+- Filtros 3x3 capturam texturas e padrões locais médios;
+- Filtros 5x5 capturam estruturas maiores e contexto espacial global;
+- E operações de pooling preservam os atributos mais salientes com invariância espacial a pequenas translações.
+
+Em vez de forçar o projetista a fixar um único tamanho arbitrário, o Módulo Inception executa 4 ramos em paralelo:
+1. Ramo 1 (à esquerda): Convolução 1×1 direta (64 filtros), atuando como projeção linear rápida ponto a ponto;
+2. Ramo 2: Convolução 1×1 de redução (bottleneck para 96 canais) seguida de Convolução 3×3 (128 filtros);
+3. Ramo 3: Convolução 1×1 de redução agressiva (para 16 canais) antes da Convolução 5×5 (32 filtros), impedindo a explosão de FLOPs;
+4. Ramo 4 (à direita): Max Pooling 3×3 com stride 1 seguido por uma Convolução 1×1 de redução (32 filtros) para fixar a profundidade de saída.
+
+Reparem na regra de ouro da geometria espacial: todas as convoluções e o pooling operam com stride 1 e 'same padding'. Dessa forma, todas as 4 saídas preservam rigorosamente a mesma altura e largura da entrada (H × W). No topo, elas convergem para a caixa verde: o 'Depth Concat', que empilha os mapas ao longo do eixo dos canais: 64 + 128 + 32 + 32 = 256 canais na saída do primeiro bloco Inception.
+
+Vocês podem alternar no botão superior para a versão 'Ingênua': sem as convoluções 1x1 de compressão antes dos filtros 3x3 e 5x5, a quantidade de operações e mapas de ativação explodiria a cada estágio. O truque dos bottlenecks 1x1 é a grande sacada de engenharia que permitiu empilhar 9 desses blocos em 22 camadas profundas mantendo a rede leve e ultra-rápida.`
   },
 
   // ==========================================
