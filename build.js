@@ -49,6 +49,23 @@ if (fs.existsSync(pdfPath02)) {
 }
 console.log('✅ Apresentação da Aula 02 copiada para dist/aula_02_transformers/');
 
+// 3.3 Build da Apresentação da Aula 03
+const aula03Dir = path.join(ROOT_DIR, 'aula_03_fine_tuning_bert', 'apresentacao');
+console.log('📦 Compilando apresentação da Aula 03 (React + Vite)...');
+execSync('npm run build', { cwd: aula03Dir, stdio: 'inherit' });
+
+// 3.4 Copiar dist da Aula 03 para dist/aula_03_fine_tuning_bert
+const aula03Dist = path.join(aula03Dir, 'dist');
+const destAula03 = path.join(DIST_DIR, 'aula_03_fine_tuning_bert');
+fs.copySync(aula03Dist, destAula03);
+
+const pdfPath03 = path.join(ROOT_DIR, 'aula_03_fine_tuning_bert', 'aula_03_apresentacao.pdf');
+if (fs.existsSync(pdfPath03)) {
+  fs.copySync(pdfPath03, path.join(destAula03, 'aula_03_apresentacao.pdf'));
+  console.log('✅ PDF da Aula 03 copiado para dist/aula_03_fine_tuning_bert/aula_03_apresentacao.pdf');
+}
+console.log('✅ Apresentação da Aula 03 copiada para dist/aula_03_fine_tuning_bert/');
+
 // 4. Copiar arquivos raiz para dist/
 fs.copySync(path.join(ROOT_DIR, 'index.html'), path.join(DIST_DIR, 'index.html'));
 if (fs.existsSync(path.join(ROOT_DIR, 'infnet_logo.png'))) {

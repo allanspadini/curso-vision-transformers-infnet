@@ -918,6 +918,153 @@
           </a>
         </div>
       </article>
+
+      <!-- Card Aula 03 -->
+      <article class="lesson-card" style="margin-top: 28px;">
+        <div class="lesson-top">
+          <div class="lesson-title-group">
+            <h4>
+              Aula 03 — BERT e Modelos Encoder-Only: Atenção Bidirecional, Pré-Treinamento (MLM &amp; NSP) e Cabeças Plugáveis
+            </h4>
+            <p>
+              Atenção bidirecional profunda de 360 graus, anatomia modular do BERT, o conceito chave de cabeças plugáveis (Sentimento, NER com a regra do -100, SQuAD e NLI), embeddings triplos (Token, Segment, Position), pré-treinamento com Masked Language Model (regra 80/10/10) e Next Sentence Prediction, busca semântica em milissegundos com Bi-Encoders (Sentence-BERT) e evoluções de engenharia (RoBERTa, DistilBERT, DeBERTa).
+            </p>
+          </div>
+          <div class="lesson-badges">
+            <span class="badge green">● Disponível</span>
+            <span class="badge cyan">20 Slides Interativos</span>
+            <span class="badge">5 Laboratórios Hands-on</span>
+          </div>
+        </div>
+
+        <!-- Primary Action Button: Enter Presentation -->
+        <div style="margin: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="./aula_03_fine_tuning_bert/" class="cta-presentation-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Acessar Apresentação de Slides (20 Slides)
+          </a>
+        </div>
+
+        <!-- Notebooks Section: Hands-on Notebooks -->
+        <div class="notebooks-section-title">
+          <span>📓 Notebooks Práticos no Google Colab:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_03_fine_tuning_bert/aula_03_bert_fine_tuning.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">⚡</span>
+                <span class="notebook-name">Inferência e Fine-Tuning do BERT</span>
+              </div>
+              <p class="notebook-desc">Adaptação do BERT para Análise de Sentimentos e Reconhecimento de Entidades (NER) com máscara -100 no Hugging Face.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_03_fine_tuning_bert/aula_03_transformer_pytorch.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🔄</span>
+                <span class="notebook-name">Tradução com torch.nn.Transformer</span>
+              </div>
+              <p class="notebook-desc">Treinamento Seq2Seq de tradução Inglês-Português com a implementação oficial do Transformer nativo do PyTorch.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Highlights of Aula 03 Interactive Labs -->
+        <div class="notebooks-section-title" style="margin-top: 18px;">
+          <span>🧪 Laboratórios Interativos Integrados na Apresentação:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🔌</span>
+                <span class="notebook-name">Simulador de Cabeças Plugáveis</span>
+              </div>
+              <p class="notebook-desc">Inspeção interativa de 4 tarefas (Sentimento, NER, QA e NLI) com troca instantânea de cabeças e tensores.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 1 • Slide 06
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🎭</span>
+                <span class="notebook-name">Simulador do Masked LM (MLM)</span>
+              </div>
+              <p class="notebook-desc">Mascaramento interativo com [MASK], cálculo de probabilidades Softmax sobre o vocabulário e perda Cross-Entropy.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 2 • Slide 09
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🔗</span>
+                <span class="notebook-name">Inspetor de Pares e NSP</span>
+              </div>
+              <p class="notebook-desc">Testes de pares de frases, verificação de coerência discursiva e classificação binária IsNext vs NotNext no [CLS].</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 3 • Slide 11
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">⚖️</span>
+                <span class="notebook-name">Comparador de Modelos &amp; VRAM</span>
+              </div>
+              <p class="notebook-desc">Dimensionamento de hardware para BERT, RoBERTa, DistilBERT e DeBERTa com sliders de Batch e Sequência.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 4 • Slide 19
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🏆</span>
+                <span class="notebook-name">Quiz de Fixação sobre o BERT</span>
+              </div>
+              <p class="notebook-desc">Desafio de 4 questões técnicas com feedback analítico imediato, pontuação e explicações aprofundadas.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 5 • Slide 20
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplementary Links -->
+        <div class="supp-links">
+          <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 600;">Recursos Pedagógicos:</span>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_03_fine_tuning_bert/plano_aula.md" target="_blank" class="supp-btn">
+            📄 Plano de Aula Pedagógico
+          </a>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_03_fine_tuning_bert/falas_apresentador.md" target="_blank" class="supp-btn">
+            🎙️ Roteiro do Apresentador
+          </a>
+        </div>
+      </article>
     </section>
 
   </main>

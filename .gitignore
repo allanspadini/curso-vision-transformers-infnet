@@ -40,6 +40,14 @@ yolo_fruit_dataset/
 sample_images/
 runs/
 .cache/
+results/
+results_*/
+
+
+# Secrets / Environments
+.env
+.env.*
+.env.local
 
 # OS / Editor
 .DS_Store
@@ -47,3 +55,5 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+
