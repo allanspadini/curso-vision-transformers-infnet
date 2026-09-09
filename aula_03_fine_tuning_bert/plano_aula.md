@@ -81,6 +81,7 @@ A aula segue estritamente o método de 4 etapas:
   - Aplicação SPA com 20 slides interativos, KaTeX para renderização de fórmulas, diagramas vetoriais SVG de alta resolução e 5 simuladores interativos.
   - Teleprompter integrado com as falas do professor (Atalho `N`).
   - Navegação em grade (Atalho `G`) e modo Tela Cheia (Atalho `F`).
+  - Versão em PDF para Leitura Offline e Impressão (`aula_03_apresentacao.pdf`).
 - **Roteiro do Professor (`falas_apresentador.md`):** Script completo de narração slide por slide, rigorosamente sincronizado com os slides.
 - **Notebooks Práticos Executáveis (Google Colab):**
   - `aula_03_bert_fine_tuning.ipynb`: Inferência com `pipeline()`, Fine-Tuning do BERT para análise de sentimentos e NER com máscara `-100`.
