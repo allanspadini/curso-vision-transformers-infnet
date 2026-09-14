@@ -1073,6 +1073,148 @@
           </a>
         </div>
       </article>
+
+      <!-- Card Aula 04 -->
+      <article class="lesson-card" style="margin-top: 28px;">
+        <div class="lesson-top">
+          <div class="lesson-title-group">
+            <h4>
+              Aula 04 — Vision Transformers (ViT) e Classificação de Imagens: Patch Slicing, Inductive Bias e Regularização com CutMix
+            </h4>
+            <p>
+              A extensão dos Transformers para a visão computacional, o colapso da autoatenção direta em pixels O(N²), o dilema do viés indutivo (CNNs vs ViT), a quebra da imagem em patches 16×16, projeção linear (Patch Embedding), token [CLS], injeção de embeddings posicionais 1D, arquitetura Pre-LN, o gargalo da "fome de dados" (Data Hunger), regularização geométrica avançada com CutMix e Mixup via soft targets, interpretabilidade por Attention Rollout e o ecossistema moderno (DeiT, Swin Transformer).
+            </p>
+          </div>
+          <div class="lesson-badges">
+            <span class="badge green">● Disponível</span>
+            <span class="badge cyan">16 Slides Interativos</span>
+            <span class="badge">4 Atividades Interativas</span>
+          </div>
+        </div>
+
+        <!-- Primary Action Button: Enter Presentation & Download PDF -->
+        <div style="margin: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="./aula_04_vision_transformers/" class="cta-presentation-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Acessar Apresentação de Slides (16 Slides)
+          </a>
+          <a href="./aula_04_vision_transformers/aula_04_apresentacao.pdf" download target="_blank" class="cta-presentation-btn" style="background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Baixar PDF da Apresentação
+          </a>
+        </div>
+
+        <!-- Notebooks Section: Hands-on Notebooks -->
+        <div class="notebooks-section-title">
+          <span>📓 Notebooks Práticos no Google Colab:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_04_vision_transformers/aula_04_vision_transformers.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🌿</span>
+                <span class="notebook-name">Vision Transformers: Fine-Tuning &amp; Attention Rollout</span>
+              </div>
+              <p class="notebook-desc">Prática de ponta a ponta com Hugging Face `transformers`: classificação agritech de folhas (Beans), Zero-Shot ImageNet, regularização com CutMix e explicabilidade visual por mapas de atenção.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_04_vision_transformers/aula_04_resolucao_desafios_bert_lora.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🔬</span>
+                <span class="notebook-name">Resolução de Desafios: BERTimbau, LoRA &amp; Embeddings</span>
+              </div>
+              <p class="notebook-desc">Implementação passo a passo e formalização matemática: BERTimbau PT-BR, parametrização LoRA de baixo posto e busca semântica com Mean Pooling.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Highlights of Aula 04 Interactive Labs -->
+        <div class="notebooks-section-title" style="margin-top: 18px;">
+          <span>🧪 Laboratórios Interativos Integrados na Apresentação:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🧩</span>
+                <span class="notebook-name">Simulador de Fatiamento de Patches</span>
+              </div>
+              <p class="notebook-desc">Ajuste interativo de resolução e tamanho do patch, observando o número de tokens e a redução de complexidade O(N²).</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 1 • Slide 05
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">📊</span>
+                <span class="notebook-name">Rastreador de Tensores PyTorch no ViT</span>
+              </div>
+              <p class="notebook-desc">Inspeção dimensional passo a passo: [B, 3, 224, 224] → [B, 196, 768] → [B, 197, 768] → [B, num_classes].</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 2 • Slide 10
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">⚖️</span>
+                <span class="notebook-name">Matriz de Trade-offs para Produção</span>
+              </div>
+              <p class="notebook-desc">Comparador dinâmico de arquiteturas (ViT-Base, DeiT, Swin, ConvNeXt) por Top-1, FLOPs, Parâmetros e VRAM.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 3 • Slide 15
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🏆</span>
+                <span class="notebook-name">Quiz de Fixação sobre Vision Transformers</span>
+              </div>
+              <p class="notebook-desc">Desafio interativo com 3 questões de alta profundidade técnica sobre complexidade quadrática, CutMix e viés indutivo.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Quiz • Slide 16
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplementary Links -->
+        <div class="supp-links">
+          <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 600;">Recursos Pedagógicos:</span>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_04_vision_transformers/plano_aula.md" target="_blank" class="supp-btn">
+            📄 Plano de Aula Pedagógico
+          </a>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_04_vision_transformers/falas_apresentador.md" target="_blank" class="supp-btn">
+            🎙️ Roteiro do Apresentador
+          </a>
+        </div>
+      </article>
     </section>
 
   </main>

@@ -88,9 +88,50 @@ apresentacao/
   - Títulos: Google Fonts `'Outfit'`, sans-serif.
   - Corpo / Textos: Google Fonts `'Inter'`, sans-serif.
   - Código / Matemática: Google Fonts `'Fira Code'`, monospace.
-- **Viewport dos Slides**:
-  - Moldura fixa em proporção 16:9 (`.slide-viewport`, max 1366x768px).
-  - Suporte a Fullscreen puro no navegador via tecla `F` sem barras pretas.
+- **Viewport dos Slides e Auto-scaler Responsivo (Obrigatório)**:
+  - **Dimensão Canônica 16:9**: A moldura lógica interna do slide deve ser estritamente de **1366 × 768px** (`.slide-scaler`), com `transform-origin: center center`.
+  - **Prevenção de Slides Achatados / Pequenos**:
+    - **Nunca** deixar o contêiner do slide sem dimensionamento explícito ou flex-shrink padrão: `.slide-scaler` DEVE conter obrigatoriamente:
+      ```css
+      .slide-scaler {
+        width: 1366px;
+        height: 768px;
+        min-width: 1366px;
+        min-height: 768px;
+        max-width: 1366px;
+        max-height: 768px;
+        flex-shrink: 0;
+        transform-origin: center center;
+        position: relative;
+        overflow: hidden;
+      }
+      ```
+    - O contêiner externo (`.presentation-container`) DEVE ocupar `width: 100vw; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center;`.
+  - **Mecanismo de Auto-scaler Obrigatório no `App.jsx`**:
+    - Gerenciar o estado `scale` com `useState(1)` e `containerRef`.
+    - Implementar a função `updateScale` com recálculo nos eventos `resize` e `fullscreenchange`:
+      ```javascript
+      const updateScale = useCallback(() => {
+        if (!containerRef.current) return;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const isFullscreenActive = !!document.fullscreenElement;
+        const paddingX = isFullscreenActive ? 0 : 20;
+        const paddingY = isFullscreenActive ? 0 : 20;
+
+        const scaleX = (windowWidth - paddingX) / 1366;
+        const scaleY = (windowHeight - paddingY) / 768;
+        // Escalar proporcionalmente sem travas artificiais baixas (permitindo expansão em 1080p, 1440p e 4K)
+        const newScale = Math.min(scaleX, scaleY);
+        setScale(Math.max(0.35, newScale));
+      }, []);
+      ```
+    - **Atenção**: **NUNCA usar tetos artificiais arbitrários como `Math.min(..., 1.25)`**, pois isso impede que a apresentação se expanda em monitores 1080p (scale ~1.38×) e 1440p (scale ~1.85×), tornando os slides minúsculos e cercados por bordas pretas gigantes.
+  - **Posicionamento de Controles e Modais**:
+    - `<div className="slide-scaler" style={{ transform: `scale(${scale})` }}>` engloba `<Header>`, `<main className="slide-body">`, `<Footer>` e `<NotesDrawer>`.
+    - `<Controls>` (barra flutuante) e `<OverviewModal>` (modal de grade) devem ficar **fora** do `.slide-scaler`, diretamente no `.presentation-container`.
+    - Garantir que `<NotesDrawer>` receba `currentSlide={currentSlideIndex}` e `slide={currentSlide}` para exibição imediata com o atalho `N`.
+  - **Suporte a Fullscreen puro no navegador via tecla `F`**: Ao entrar em tela cheia, `padding` é zerado para cobrir 100% da resolução física do display sem barras pretas.
 
 #### 4. Recursos & Atalhos de Navegação
 - `Seta Direita` / `Espaço` / `PageDown`: Próximo slide.
