@@ -83,6 +83,41 @@ if (fs.existsSync(pdfPath04)) {
 }
 console.log('✅ Apresentação da Aula 04 copiada para dist/aula_04_vision_transformers/');
 
+// 3.7 Build da Apresentação da Aula 05
+const aula05Dir = path.join(ROOT_DIR, 'aula_05_advanced_vision_transformers', 'apresentacao');
+console.log('📦 Compilando apresentação da Aula 05 (React + Vite)...');
+execSync('npm run build', { cwd: aula05Dir, stdio: 'inherit' });
+
+// 3.8 Copiar dist da Aula 05 para dist/aula_05_advanced_vision_transformers
+const aula05Dist = path.join(aula05Dir, 'dist');
+const destAula05 = path.join(DIST_DIR, 'aula_05_advanced_vision_transformers');
+fs.copySync(aula05Dist, destAula05);
+
+const pdfPath05 = path.join(ROOT_DIR, 'aula_05_advanced_vision_transformers', 'aula_05_apresentacao.pdf');
+if (fs.existsSync(pdfPath05)) {
+  fs.copySync(pdfPath05, path.join(destAula05, 'aula_05_apresentacao.pdf'));
+  console.log('✅ PDF da Aula 05 copiado para dist/aula_05_advanced_vision_transformers/aula_05_apresentacao.pdf');
+}
+
+const nbPath05 = path.join(ROOT_DIR, 'aula_05_advanced_vision_transformers', 'aula_05_advanced_vision_transformers.ipynb');
+if (fs.existsSync(nbPath05)) {
+  fs.copySync(nbPath05, path.join(destAula05, 'aula_05_advanced_vision_transformers.ipynb'));
+  console.log('✅ Notebook 1 da Aula 05 copiado para dist/aula_05_advanced_vision_transformers/aula_05_advanced_vision_transformers.ipynb');
+}
+
+const nbDeitPath05 = path.join(ROOT_DIR, 'aula_05_advanced_vision_transformers', 'aula_05_deit_distillation_transfer_learning.ipynb');
+if (fs.existsSync(nbDeitPath05)) {
+  fs.copySync(nbDeitPath05, path.join(destAula05, 'aula_05_deit_distillation_transfer_learning.ipynb'));
+  console.log('✅ Notebook 2 (DeiT) da Aula 05 copiado para dist/aula_05_advanced_vision_transformers/aula_05_deit_distillation_transfer_learning.ipynb');
+}
+
+const nbDinoPath05 = path.join(ROOT_DIR, 'aula_05_advanced_vision_transformers', 'aula_05_dino_self_supervised_vision.ipynb');
+if (fs.existsSync(nbDinoPath05)) {
+  fs.copySync(nbDinoPath05, path.join(destAula05, 'aula_05_dino_self_supervised_vision.ipynb'));
+  console.log('✅ Notebook 3 (DINO) da Aula 05 copiado para dist/aula_05_advanced_vision_transformers/aula_05_dino_self_supervised_vision.ipynb');
+}
+console.log('✅ Apresentação da Aula 05 copiada para dist/aula_05_advanced_vision_transformers/');
+
 // 4. Copiar arquivos raiz para dist/
 fs.copySync(path.join(ROOT_DIR, 'index.html'), path.join(DIST_DIR, 'index.html'));
 if (fs.existsSync(path.join(ROOT_DIR, 'infnet_logo.png'))) {

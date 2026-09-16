@@ -1215,6 +1215,152 @@
           </a>
         </div>
       </article>
+
+      <!-- ================================================================= -->
+      <!-- AULA 05: MODELOS VIT AVANÇADOS -->
+      <!-- ================================================================= -->
+      <article class="lesson-card" id="aula-05">
+        <div class="lesson-card-header">
+          <div class="lesson-title-group">
+            <h4>
+              Aula 05 — Modelos ViT Avançados: DeiT, PVT, Swin Transformer &amp; DINO
+            </h4>
+            <p>
+              Revisão estrutural e tensor tracking do ViT canônico, diagnóstico das 3 barreiras críticas (fome de dados, rigidez isotrópica e O(N²)), Data-Efficient Image Transformer (DeiT) via destilação com token [DIST], Pyramid Vision Transformer (PVT) com Spatial-Reduction Attention (SRA) para tarefas densas (FPN/Mask R-CNN), The Swin Transformer com janelas locais W-MSA, Shifted Windows (SW-MSA) e Cyclic Shift com atenção mascarada, aprendizado auto-supervisionado DINO com propriedades emergentes de segmentação semântica sem rótulos, fronteiras modernas com MAE e DINOv2, e o contra-ataque convolucional com ConvNeXt.
+            </p>
+          </div>
+          <div class="lesson-badges">
+            <span class="badge green">● Disponível</span>
+            <span class="badge cyan">17 Slides Interativos</span>
+            <span class="badge purple">3 Cadernos Colab</span>
+            <span class="badge">3 Laboratórios Interativos</span>
+          </div>
+        </div>
+
+        <!-- Primary Action Button -->
+        <div style="margin: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="./aula_05_advanced_vision_transformers/" class="cta-presentation-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Acessar Apresentação de Slides (17 Slides)
+          </a>
+          <a href="./aula_05_advanced_vision_transformers/aula_05_apresentacao.pdf" download target="_blank" class="cta-presentation-btn" style="background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Baixar PDF da Apresentação
+          </a>
+        </div>
+
+        <!-- Notebooks Section: Hands-on Notebooks -->
+        <div class="notebooks-section-title">
+          <span>📓 Notebooks Práticos no Google Colab:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_05_advanced_vision_transformers/aula_05_advanced_vision_transformers.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🛰️</span>
+                <span class="notebook-name">Revisão do ViT Canônico: Fine-Tuning &amp; DataProcessor</span>
+              </div>
+              <p class="notebook-desc">Revisão prática modular com Hugging Face `transformers`: carregamento do AutoImageProcessor, fine-tuning no EuroSAT (imagens de satélite RGB) e inferência com gráficos de confiança.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_05_advanced_vision_transformers/aula_05_deit_distillation_transfer_learning.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">⚡</span>
+                <span class="notebook-name">DeiT: Destilação de Conhecimento com Professor CNN</span>
+              </div>
+              <p class="notebook-desc">Implementação didática da destilação do DeiT: professor ResNet-18 congelado, token de destilação [DIST], função de perda de Hard Distillation e comitê dual-head no dataset Cães vs Gatos.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_05_advanced_vision_transformers/aula_05_dino_self_supervised_vision.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🦅</span>
+                <span class="notebook-name">DINO: Auto-Supervisão com Transformers &amp; DINOv2</span>
+              </div>
+              <p class="notebook-desc">Auto-supervisão com Hugging Face `transformers`: classificação sem cabeça linear via Nearest Mean Classifier, pipeline com DINOv2, segmentação emergente sem rótulos e as 6 cabeças da Figura 16-8.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Highlights of Aula 05 Interactive Labs -->
+        <div class="notebooks-section-title" style="margin-top: 18px;">
+          <span>🧪 Laboratórios Interativos Integrados na Apresentação:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">📐</span>
+                <span class="notebook-name">Simulador Piramidal e SRA</span>
+              </div>
+              <p class="notebook-desc">Alterne entre MSA global e Spatial-Reduction Attention (SRA) e acompanhe o consumo de VRAM em resoluções até 1024×1024.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 1 • Slide 08
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🦅</span>
+                <span class="notebook-name">Visualizador de Atenção Emergente DINO</span>
+              </div>
+              <p class="notebook-desc">Compare mapas de atenção de ViT supervisionado vs DINO auto-supervisionado e inspecione as 6 cabeças especializadas em partes anatômicas.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 2 • Slide 14
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🎯</span>
+                <span class="notebook-name">Quiz &amp; Matriz de Decisão Industrial</span>
+              </div>
+              <p class="notebook-desc">Avaliação de fixação com 4 questões profundas e matriz interativa de seleção de backbones para cenários corporativos reais.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 3 • Slide 17
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplementary Links -->
+        <div class="supp-links">
+          <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 600;">Recursos Pedagógicos:</span>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_05_advanced_vision_transformers/plano_aula.md" target="_blank" class="supp-btn">
+            📄 Plano de Aula Pedagógico
+          </a>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_05_advanced_vision_transformers/falas_apresentador.md" target="_blank" class="supp-btn">
+            🎙️ Roteiro do Apresentador
+          </a>
+        </div>
+      </article>
     </section>
 
   </main>

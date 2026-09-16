@@ -8,10 +8,12 @@
     "dev:aula02": "cd aula_02_transformers/apresentacao && npm run dev",
     "dev:aula03": "cd aula_03_fine_tuning_bert/apresentacao && npm run dev",
     "dev:aula04": "cd aula_04_vision_transformers/apresentacao && npm run dev",
+    "dev:aula05": "cd aula_05_advanced_vision_transformers/apresentacao && npm run dev",
     "build:aula01": "cd aula_01_cnn_architectures/apresentacao && npm run build",
     "build:aula02": "cd aula_02_transformers/apresentacao && npm run build",
     "build:aula03": "cd aula_03_fine_tuning_bert/apresentacao && npm run build",
     "build:aula04": "cd aula_04_vision_transformers/apresentacao && npm run build",
+    "build:aula05": "cd aula_05_advanced_vision_transformers/apresentacao && npm run build",
     "build": "node build.js",
     "preview": "serve dist",
     "start": "serve dist"
