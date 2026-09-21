@@ -62,7 +62,7 @@ Ao final desta aula, o aluno de pós-graduação será capaz de:
 
 ## 4. Estrutura dos Módulos e Slides da Apresentação
 
-A apresentação interativa em React + Vite (`apresentacao/`) contém 17 slides distribuídos em 6 blocos:
+A apresentação interativa em React + Vite (`apresentacao/`) contém 17 slides distribuídos em 6 blocos, acompanhada de versão compilada em PDF de alta definição (`aula_06_apresentacao.pdf`):
 
 | Bloco | Slides | Título / Tema Principal | Tipo de Componente |
 | :--- | :--- | :--- | :--- |
