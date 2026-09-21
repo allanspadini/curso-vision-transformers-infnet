@@ -118,6 +118,35 @@ if (fs.existsSync(nbDinoPath05)) {
 }
 console.log('✅ Apresentação da Aula 05 copiada para dist/aula_05_advanced_vision_transformers/');
 
+// 3.9 Build da Apresentação da Aula 06
+const aula06Dir = path.join(ROOT_DIR, 'aula_06_clip_openai', 'apresentacao');
+console.log('📦 Compilando apresentação da Aula 06 (React + Vite)...');
+execSync('npm run build', { cwd: aula06Dir, stdio: 'inherit' });
+
+// 3.10 Copiar dist da Aula 06 para dist/aula_06_clip_openai
+const aula06Dist = path.join(aula06Dir, 'dist');
+const destAula06 = path.join(DIST_DIR, 'aula_06_clip_openai');
+fs.copySync(aula06Dist, destAula06);
+
+const pdfPath06 = path.join(ROOT_DIR, 'aula_06_clip_openai', 'aula_06_apresentacao.pdf');
+if (fs.existsSync(pdfPath06)) {
+  fs.copySync(pdfPath06, path.join(destAula06, 'aula_06_apresentacao.pdf'));
+  console.log('✅ PDF da Aula 06 copiado para dist/aula_06_clip_openai/aula_06_apresentacao.pdf');
+}
+
+const nbPath06 = path.join(ROOT_DIR, 'aula_06_clip_openai', 'aula_06_clip_openai.ipynb');
+if (fs.existsSync(nbPath06)) {
+  fs.copySync(nbPath06, path.join(destAula06, 'aula_06_clip_openai.ipynb'));
+  console.log('✅ Notebook 1 da Aula 06 copiado para dist/aula_06_clip_openai/aula_06_clip_openai.ipynb');
+}
+
+const nbFtPath06 = path.join(ROOT_DIR, 'aula_06_clip_openai', 'aula_06_clip_fine_tuning_huggingface.ipynb');
+if (fs.existsSync(nbFtPath06)) {
+  fs.copySync(nbFtPath06, path.join(destAula06, 'aula_06_clip_fine_tuning_huggingface.ipynb'));
+  console.log('✅ Notebook 2 (Fine-Tuning) da Aula 06 copiado para dist/aula_06_clip_openai/aula_06_clip_fine_tuning_huggingface.ipynb');
+}
+console.log('✅ Apresentação da Aula 06 copiada para dist/aula_06_clip_openai/');
+
 // 4. Copiar arquivos raiz para dist/
 fs.copySync(path.join(ROOT_DIR, 'index.html'), path.join(DIST_DIR, 'index.html'));
 if (fs.existsSync(path.join(ROOT_DIR, 'infnet_logo.png'))) {

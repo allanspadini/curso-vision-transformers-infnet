@@ -34,7 +34,7 @@ jobs:
       - name: Install Root Dependencies
         run: npm install
 
-      - name: Install Presentation Dependencies (Aula 01, 02, 03, 04 & 05)
+      - name: Install Presentation Dependencies (Aulas 01, 02, 03, 04, 05 & 06)
         run: |
           cd aula_01_cnn_architectures/apresentacao
           npm install
@@ -45,6 +45,8 @@ jobs:
           cd ../../aula_04_vision_transformers/apresentacao
           npm install
           cd ../../aula_05_advanced_vision_transformers/apresentacao
+          npm install
+          cd ../../aula_06_clip_openai/apresentacao
           npm install
           cd ../..
 

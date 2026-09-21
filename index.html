@@ -1361,6 +1361,143 @@
           </a>
         </div>
       </article>
+
+      <!-- ================================================================= -->
+      <!-- AULA 06: OPENAI CLIP -->
+      <!-- ================================================================= -->
+      <article class="lesson-card" id="aula-06">
+        <div class="lesson-card-header">
+          <div class="lesson-title-group">
+            <h4>
+              Aula 06 — CLIP: Contrastive Language-Image Pre-training (OpenAI)
+            </h4>
+            <p>
+              A revolução do aprendizado multimodal e vocabulário aberto (Open-Vocabulary), superando o gargalo do vocabulário fechado supervisionado com 400M de pares (WIT). Arquitetura de duas torres (Two-Tower Network), rastreamento de tensores em PyTorch, perda contrastiva InfoNCE simétrica com temperatura aprendível τ, geometria da hiperesfera unitária S^(D-1), robustez fora da distribuição (OOD em ImageNet-A/R/Sketch), inferência Zero-Shot com Prompt Engineering e Ensembling (+5.0%), pesos pré-treinados para downstream (Linear Probe vs CoOp), visão de vocabulário aberto para detecção (OWL-ViT) e segmentação (CLIPSeg), e detecção de anomalias industriais sem dados prévios de defeitos (MVTec AD).
+            </p>
+          </div>
+          <div class="lesson-badges">
+            <span class="badge green">● Disponível</span>
+            <span class="badge cyan">17 Slides Interativos</span>
+            <span class="badge purple">Notebook Colab</span>
+            <span class="badge">4 Laboratórios Interativos</span>
+          </div>
+        </div>
+
+        <!-- Primary Action Button -->
+        <div style="margin: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="./aula_06_clip_openai/" class="cta-presentation-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Acessar Apresentação de Slides (17 Slides)
+          </a>
+        </div>
+
+        <!-- Notebooks Section: Hands-on Notebooks -->
+        <div class="notebooks-section-title">
+          <span>📓 Notebooks Práticos no Google Colab:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_06_clip_openai/aula_06_clip_openai.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🚀</span>
+                <span class="notebook-name">Notebook 1: Aplicações Multimodais Completas do CLIP</span>
+              </div>
+              <p class="notebook-desc">Implementação modular em PyTorch e Hugging Face `transformers`: rastreamento tensorial e cálculo manual da similaridade de cosseno, classificação Zero-Shot com Prompt Engineering e Ensembling, motor de busca semântica Text-to-Image, projeção t-SNE 2D do espaço latente, detector de anomalias industriais com prompts de integridade e downstream Linear Probe.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_06_clip_openai/aula_06_clip_fine_tuning_huggingface.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🎯</span>
+                <span class="notebook-name">Notebook 2: Fine-Tuning Contrastivo do CLIP com Hugging Face</span>
+              </div>
+              <p class="notebook-desc">Treinamento prático de adaptação de domínio multimodal: congelamento estratégico de encoders (apenas ~0.8% de parâmetros treináveis), cálculo nativo da perda InfoNCE simétrica com `CLIPModel(return_loss=True)`, pipeline com `CLIPProcessor`, otimização AdamW + CosineAnnealingLR e comparativo quantitativo e visual pré vs pós-treino.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Highlights of Aula 06 Interactive Labs -->
+        <div class="notebooks-section-title" style="margin-top: 18px;">
+          <span>🧪 Laboratórios Interativos Integrados na Apresentação:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🔥</span>
+                <span class="notebook-name">Simulador de Perda InfoNCE &amp; Temperatura τ</span>
+              </div>
+              <p class="notebook-desc">Interaja com a matriz de similaridade 4×4, alterne a temperatura aprendível τ e analise o impacto na entropia do Softmax e da Loss simétrica.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 1 • Slide 05
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🎯</span>
+                <span class="notebook-name">Classificador Zero-Shot &amp; Prompt Tuning</span>
+              </div>
+              <p class="notebook-desc">Selecione imagens reais de teste, compare single-word vs template contextual vs desambiguação e avalie probabilidades Softmax em tempo real.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 2 • Slide 11
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🏭</span>
+                <span class="notebook-name">Detecção de Anomalias Industriais (MVTec AD)</span>
+              </div>
+              <p class="notebook-desc">Inspecione componentes industriais (PCB, parafusos, frascos), ajuste o limiar de anomalia θ e valide o veredito zero-shot da esteira.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 3 • Slide 15
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🏆</span>
+                <span class="notebook-name">Quiz de Fixação &amp; Trade-offs de Engenharia</span>
+              </div>
+              <p class="notebook-desc">5 questões conceituais desafiadoras de pós-graduação sobre InfoNCE, normalização L2, prompt ensembling e transferência downstream.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 4 • Slide 16
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplementary Links -->
+        <div class="supp-links">
+          <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 600;">Recursos Pedagógicos:</span>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_06_clip_openai/plano_aula.md" target="_blank" class="supp-btn">
+            📄 Plano de Aula Pedagógico
+          </a>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_06_clip_openai/falas_apresentador.md" target="_blank" class="supp-btn">
+            🎙️ Roteiro do Apresentador
+          </a>
+        </div>
+      </article>
     </section>
 
   </main>
