@@ -88,6 +88,28 @@ apresentacao/
   - Títulos: Google Fonts `'Outfit'`, sans-serif.
   - Corpo / Textos: Google Fonts `'Inter'`, sans-serif.
   - Código / Matemática: Google Fonts `'Fira Code'`, monospace.
+- **Design de Alto Contraste & Fundo Claro Canônico (Obrigatório)**:
+  - **Fundo Canônico Branco (`#FFFFFF`)**: O slide (`.slide-body`) é renderizado sobre fundo branco limpo.
+  - **Proibição Estrita de Contêineres Escuros / Dark Mode**: NUNCA utilize cartões escuros com opacidade (`rgba(6, 31, 56, ...)`, `#0F172A`, `#0B132B`, `#020617` ou `rgba(10, 52, 93, 0.5)`) como contêineres principais dos slides. Eles geram contraste insuficiente, aspecto turvo e ilegibilidade severa.
+  - **Padrão de Cores para Cards e Banners**:
+    - **Banner Superior**: `background: '#EDF5FA'`, `border: '1px solid #D0E3F0'`, títulos em `var(--infnet-dark-blue)` (`#0A345D`), subtítulos em `#475569` ou `#0369A1`.
+    - **Cards Principais**: `background: '#FFFFFF'`, borda `1px solid var(--border-light)` (`#D5E3EC`), sombra `boxShadow: 'var(--shadow-sm)'`.
+    - **Blocos Internos / Sub-cards**: `background: '#F8FAFC'`, borda `1px solid #E2E8F0`.
+    - **Alertas / Estados Semânticos**:
+      - Sucesso/Ótimo: `background: '#F0FDF4'`, borda `1px solid #86EFAC'`, texto `#166534`.
+      - Perigo/Alerta Crítico: `background: '#FEF2F2'`, borda `1px solid #FCA5A5'`, texto `#991B1B`.
+      - Atenção/Aviso: `background: '#FFF7ED'`, borda `1px solid #FDBA74'`, texto `#9A3412` ou `#C2410C`.
+      - Informativo: `background: '#EFF6FF'`, borda `1px solid #93C5FD'`, texto `#1E40AF`.
+  - **Tipografia e Contraste de Texto**:
+    - Títulos e Destaques: `var(--infnet-dark-blue)` (`#0A345D`) ou `#0F172A`.
+    - Corpo de Texto Principal: `#1E293B` ou `#334155`.
+    - Rótulos Auxiliares: `#475569` ou `#64748B`.
+    - **Zero Texto Desbotado**: NUNCA use cores claras como `#94A3B8`, `#CBD5E1` ou `#E2E8F0` para texto ou fórmulas sobre fundo branco ou claro.
+  - **Contraste Rigoroso em KaTeX / Fórmulas Matemáticas**:
+    - O KaTeX herda a cor do elemento pai. Garanta sempre que o contêiner de KaTeX possua cor escura legível (`var(--infnet-dark-blue)` ou `#0F172A`). Nunca renderize KaTeX sobre caixas escuras sem estilização explícita, evitando que a fórmula herde preto sobre fundo escuro.
+  - **Botões e Elementos Interativos**:
+    - Ativo / Selecionado: fundo com leve tonalidade (`#EFF6FF` ou `#F0FDF4`), borda nítida de 2px (`var(--infnet-cyan)` ou verde) e texto escuro de alto contraste (`#0369A1` ou `#15803D`).
+    - Inativo: `background: '#F8FAFC'`, borda `1px solid #CBD5E1'`, texto `#475569`.
 - **Viewport dos Slides e Auto-scaler Responsivo (Obrigatório)**:
   - **Dimensão Canônica 16:9**: A moldura lógica interna do slide deve ser estritamente de **1366 × 768px** (`.slide-scaler`), com `transform-origin: center center`.
   - **Prevenção de Slides Achatados / Pequenos**:

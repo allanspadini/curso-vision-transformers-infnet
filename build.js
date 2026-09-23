@@ -145,7 +145,40 @@ if (fs.existsSync(nbFtPath06)) {
   fs.copySync(nbFtPath06, path.join(destAula06, 'aula_06_clip_fine_tuning_huggingface.ipynb'));
   console.log('✅ Notebook 2 (Fine-Tuning) da Aula 06 copiado para dist/aula_06_clip_openai/aula_06_clip_fine_tuning_huggingface.ipynb');
 }
-console.log('✅ Apresentação da Aula 06 copiada para dist/aula_06_clip_openai/');
+// 3.11 Build da Apresentação da Aula 07
+const aula07Dir = path.join(ROOT_DIR, 'aula_07_gans_generative_adversarial_networks', 'apresentacao');
+console.log('📦 Compilando apresentação da Aula 07 (React + Vite)...');
+execSync('npm run build', { cwd: aula07Dir, stdio: 'inherit' });
+
+// 3.12 Copiar dist da Aula 07 para dist/aula_07_gans_generative_adversarial_networks
+const aula07Dist = path.join(aula07Dir, 'dist');
+const destAula07 = path.join(DIST_DIR, 'aula_07_gans_generative_adversarial_networks');
+fs.copySync(aula07Dist, destAula07);
+
+const nbDcganPath07 = path.join(ROOT_DIR, 'aula_07_gans_generative_adversarial_networks', 'aula_07_dcgan_cifar10_treinamento.ipynb');
+if (fs.existsSync(nbDcganPath07)) {
+  fs.copySync(nbDcganPath07, path.join(destAula07, 'aula_07_dcgan_cifar10_treinamento.ipynb'));
+  console.log('✅ Notebook 1 (DCGAN) da Aula 07 copiado para dist/aula_07_gans_generative_adversarial_networks/aula_07_dcgan_cifar10_treinamento.ipynb');
+}
+
+const nbPath07 = path.join(ROOT_DIR, 'aula_07_gans_generative_adversarial_networks', 'aula_07_gans_generative_adversarial_networks.ipynb');
+if (fs.existsSync(nbPath07)) {
+  fs.copySync(nbPath07, path.join(destAula07, 'aula_07_gans_generative_adversarial_networks.ipynb'));
+  console.log('✅ Notebook 2 (cGAN) da Aula 07 copiado para dist/aula_07_gans_generative_adversarial_networks/aula_07_gans_generative_adversarial_networks.ipynb');
+}
+
+const nbCycPath07 = path.join(ROOT_DIR, 'aula_07_gans_generative_adversarial_networks', 'aula_07_cyclegan_holo2bright_traducao_dominios.ipynb');
+if (fs.existsSync(nbCycPath07)) {
+  fs.copySync(nbCycPath07, path.join(destAula07, 'aula_07_cyclegan_holo2bright_traducao_dominios.ipynb'));
+  console.log('✅ Notebook 3 (CycleGAN) da Aula 07 copiado para dist/aula_07_gans_generative_adversarial_networks/aula_07_cyclegan_holo2bright_traducao_dominios.ipynb');
+}
+
+const pdfPath07 = path.join(ROOT_DIR, 'aula_07_gans_generative_adversarial_networks', 'aula_07_apresentacao.pdf');
+if (fs.existsSync(pdfPath07)) {
+  fs.copySync(pdfPath07, path.join(destAula07, 'aula_07_apresentacao.pdf'));
+  console.log('✅ PDF da Aula 07 copiado para dist/aula_07_gans_generative_adversarial_networks/aula_07_apresentacao.pdf');
+}
+console.log('✅ Apresentação da Aula 07 copiada para dist/aula_07_gans_generative_adversarial_networks/');
 
 // 4. Copiar arquivos raiz para dist/
 fs.copySync(path.join(ROOT_DIR, 'index.html'), path.join(DIST_DIR, 'index.html'));
