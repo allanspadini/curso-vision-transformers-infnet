@@ -77,6 +77,8 @@ Ao final desta aula, o aluno de pós-graduação será capaz de:
 
 ## 4. Conteúdo Programático Detalhado (Roteiro dos 15 Slides)
 
+A apresentação interativa em React + Vite (`apresentacao/`) contém 15 slides distribuídos em 4 blocos pedagógicos, acompanhada de versão compilada em PDF de alta definição (`aula_07_apresentacao.pdf`):
+
 ### Bloco 1: Fundamentação das GANs e Estrutura Macro (Slides 1 a 5)
 - **Slide 1:** Título & Apresentação da Aula 07: Da DCGAN à Tradução com CycleGAN.
 - **Slide 2:** A Estrutura Macro do Jogo Adversarial: Gerador vs Discriminador (*AdversarialGameMinimaxDiagram*).
