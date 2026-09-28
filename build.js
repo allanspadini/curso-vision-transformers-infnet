@@ -180,6 +180,35 @@ if (fs.existsSync(pdfPath07)) {
 }
 console.log('✅ Apresentação da Aula 07 copiada para dist/aula_07_gans_generative_adversarial_networks/');
 
+// 3.13 Build da Apresentação da Aula 08
+const aula08Dir = path.join(ROOT_DIR, 'aula_08_avaliacao_fid_e_sintese_visao_computacional', 'apresentacao');
+console.log('📦 Compilando apresentação da Aula 08 (React + Vite)...');
+execSync('npm run build', { cwd: aula08Dir, stdio: 'inherit' });
+
+// 3.14 Copiar dist da Aula 08 para dist/aula_08_avaliacao_fid_e_sintese_visao_computacional
+const aula08Dist = path.join(aula08Dir, 'dist');
+const destAula08 = path.join(DIST_DIR, 'aula_08_avaliacao_fid_e_sintese_visao_computacional');
+fs.copySync(aula08Dist, destAula08);
+
+const nbPath08 = path.join(ROOT_DIR, 'aula_08_avaliacao_fid_e_sintese_visao_computacional', 'aula_08_metricas_fid_e_sintese_visao_computacional.ipynb');
+if (fs.existsSync(nbPath08)) {
+  fs.copySync(nbPath08, path.join(destAula08, 'aula_08_metricas_fid_e_sintese_visao_computacional.ipynb'));
+  console.log('✅ Notebook 1 da Aula 08 copiado para dist/aula_08_avaliacao_fid_e_sintese_visao_computacional/aula_08_metricas_fid_e_sintese_visao_computacional.ipynb');
+}
+
+const nbPath08_2 = path.join(ROOT_DIR, 'aula_08_avaliacao_fid_e_sintese_visao_computacional', 'aula_08_unet_condicionamento_texto_e_consistencia_video.ipynb');
+if (fs.existsSync(nbPath08_2)) {
+  fs.copySync(nbPath08_2, path.join(destAula08, 'aula_08_unet_condicionamento_texto_e_consistencia_video.ipynb'));
+  console.log('✅ Notebook 2 (U-Net & Consistência de Vídeo) da Aula 08 copiado para dist/aula_08_avaliacao_fid_e_sintese_visao_computacional/aula_08_unet_condicionamento_texto_e_consistencia_video.ipynb');
+}
+
+const pdfPath08 = path.join(ROOT_DIR, 'aula_08_avaliacao_fid_e_sintese_visao_computacional', 'aula_08_apresentacao.pdf');
+if (fs.existsSync(pdfPath08)) {
+  fs.copySync(pdfPath08, path.join(destAula08, 'aula_08_apresentacao.pdf'));
+  console.log('✅ PDF da Aula 08 copiado para dist/aula_08_avaliacao_fid_e_sintese_visao_computacional/aula_08_apresentacao.pdf');
+}
+console.log('✅ Apresentação da Aula 08 copiada para dist/aula_08_avaliacao_fid_e_sintese_visao_computacional/');
+
 // 4. Copiar arquivos raiz para dist/
 fs.copySync(path.join(ROOT_DIR, 'index.html'), path.join(DIST_DIR, 'index.html'));
 if (fs.existsSync(path.join(ROOT_DIR, 'infnet_logo.png'))) {

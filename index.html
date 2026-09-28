@@ -1678,6 +1678,151 @@
           </a>
         </div>
       </article>
+
+      <!-- ================================================================= -->
+      <!-- AULA 08: AVALIAÇÃO DE GANS (FID) E SÍNTESE TEÓRICA DA DISCIPLINA -->
+      <!-- ================================================================= -->
+      <article class="lesson-card" id="aula-08">
+        <div class="lesson-card-header">
+          <div class="lesson-title-group">
+            <h4>
+              Aula 08 — Avaliação de Modelos Generativos (FID) e Síntese Teórica da Disciplina
+            </h4>
+            <p>
+              A avaliação quantitativa rigorosa de GANs com a métrica Fréchet Inception Distance (FID, Heusel et al., 2017): falhas de MSE/PSNR e Inception Score (IS), representações contínuas no Inception-v3 (pool3, R^2048) e a formulação da distância Wasserstein-2 entre gaussianas multivariadas (decomposição em termo de centroide ||Δμ||² e covariância Tr(Σ)). Diretrizes de engenharia, viés assintótico N≥50k e padronização com clean-fid. Síntese teórica integrada dos 4 grandes eixos da disciplina: (1) Vision Transformers (ViT), rastreamento tensorial, extração da matriz de self-attention QK^T, isolamento da linha do token [CLS], reshape espacial 14x14, upsampling contínuo e auditoria de atalhos espúrios (shortcut learning); (2) Modelos Multimodais (CLIP), projeção na hiper-esfera unitária via normalização L2, similaridade de cosseno, concentração de scores em alta dimensão, calibração empírica de thresholds e engenharia de prompts; (3) Transfer Learning em CNNs (Feature Extraction com requires_grad=False vs Fine-Tuning com taxas diferenciais) e taxonomia de Data Augmentation com preservação semântica de rótulos; (4) Governança sob desbalanceamento severo, o Paradoxo da Acurácia, métricas diagnósticas (Recall, Especificidade, F1-Macro), mitigação generativa (cGAN e CycleGAN) e o protocolo científico de validação downstream em conjunto de teste 100% real sem vazamento de dados (Group Split) e mitigação de Covariate Shift.
+            </p>
+          </div>
+          <div class="lesson-badges">
+            <span class="badge green">● Disponível</span>
+            <span class="badge cyan">20 Slides Interativos</span>
+            <span class="badge purple">FID &amp; Síntese Teórica</span>
+            <span class="badge">2 Cadernos Colab + 4 Labs</span>
+          </div>
+        </div>
+
+        <!-- Primary Action Buttons: Enter Presentation & Download PDF -->
+        <div style="margin: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="./aula_08_avaliacao_fid_e_sintese_visao_computacional/" class="cta-presentation-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Acessar Apresentação de Slides (23 Slides)
+          </a>
+          <a href="./aula_08_avaliacao_fid_e_sintese_visao_computacional/aula_08_apresentacao.pdf" download target="_blank" class="cta-presentation-btn" style="background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Baixar Slides em PDF (23 Slides)
+          </a>
+        </div>
+
+        <!-- Notebook Section -->
+        <div class="notebooks-section-title">
+          <span>📓 Cadernos Práticos de Código (Google Colab GPU T4):</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_08_avaliacao_fid_e_sintese_visao_computacional/aula_08_metricas_fid_e_sintese_visao_computacional.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🔬</span>
+                <span class="notebook-name">Caderno Prático 1: Avaliação FID, Attention Maps ViT, CLIP &amp; Governança Downstream</span>
+              </div>
+              <p class="notebook-desc">Implementação completa em PyTorch: cálculo do FID do zero via scipy/Inception-v3, extração de mapas de atenção do token [CLS], busca multimodal CLIP com thresholding e protocolo de avaliação de Recall sob desbalanceamento severo.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+
+          <a href="https://colab.research.google.com/github/allanspadini/curso-vision-transformers-infnet/blob/main/aula_08_avaliacao_fid_e_sintese_visao_computacional/aula_08_unet_condicionamento_texto_e_consistencia_video.ipynb" target="_blank" class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🎬</span>
+                <span class="notebook-name">Caderno Prático 2: Geração Text-to-Image com diffusers, LoRA e Vídeos com AnimateDiff</span>
+              </div>
+              <p class="notebook-desc">Geração de imagens fotorrealistas no espaço latente via Hugging Face diffusers, fine-tuning eficiente de Cross-Attention com LoRA (peft), e transição para vídeos e sequências temporalmente consistentes usando AnimateDiff e exportação de GIFs.</p>
+            </div>
+            <div class="colab-badge-link">
+              <span>Executar no Colab</span>
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Interactive Labs in Aula 08 -->
+        <div class="notebooks-section-title" style="margin-top: 24px;">
+          <span>⚡ Laboratórios e Simuladores Interativos da Apresentação:</span>
+        </div>
+
+        <div class="notebooks-grid">
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">📐</span>
+                <span class="notebook-name">Simulador Paramétrico da Distância de Fréchet (FID)</span>
+              </div>
+              <p class="notebook-desc">Manipulação dinâmica de centroides, covariância multivariada, diagnóstico em tempo real de Mode Collapse e visualização de variedades gaussianas 2D.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 1 • Slide 06
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">👁️</span>
+                <span class="notebook-name">Inspetor de Mapas de Atenção do Vision Transformer</span>
+              </div>
+              <p class="notebook-desc">Auditoria espacial da linha do token [CLS] por camada (1, 6 e 12) e cabeça, com identificação de decisões semânticas vs atalhos espúrios (shortcut learning).</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 2 • Slide 10
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🌐</span>
+                <span class="notebook-name">Busca Semântica e Calibração de Thresholds no CLIP</span>
+              </div>
+              <p class="notebook-desc">Explorador de recuperação imagem-texto com variação de limiar de similaridade de cosseno (τ) e análise do trade-off de Precisão vs Recall.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 3 • Slide 13
+            </div>
+          </div>
+
+          <div class="notebook-card">
+            <div>
+              <div class="notebook-header">
+                <span class="notebook-icon">🏆</span>
+                <span class="notebook-name">Quiz de Fixação Formativa da Disciplina</span>
+              </div>
+              <p class="notebook-desc">5 questões aprofundadas integrando FID, ViT Attention, geometria latente do CLIP, taxonomia de augmentation e governança contra vazamento de dados.</p>
+            </div>
+            <div class="colab-badge-link" style="border-color: rgba(27, 181, 216, 0.4); color: var(--infnet-cyan-light);">
+              Lab 4 • Slide 20
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplementary Links -->
+        <div class="supp-links">
+          <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 600;">Recursos Pedagógicos:</span>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_08_avaliacao_fid_e_sintese_visao_computacional/plano_aula.md" target="_blank" class="supp-btn">
+            📄 Plano de Aula Pedagógico
+          </a>
+          <a href="https://github.com/allanspadini/curso-vision-transformers-infnet/blob/main/aula_08_avaliacao_fid_e_sintese_visao_computacional/falas_apresentador.md" target="_blank" class="supp-btn">
+            🎙️ Roteiro do Apresentador
+          </a>
+        </div>
+      </article>
     </section>
 
   </main>

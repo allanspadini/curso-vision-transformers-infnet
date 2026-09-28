@@ -11,6 +11,7 @@
     "dev:aula05": "cd aula_05_advanced_vision_transformers/apresentacao && npm run dev",
     "dev:aula06": "cd aula_06_clip_openai/apresentacao && npm run dev",
     "dev:aula07": "cd aula_07_gans_generative_adversarial_networks/apresentacao && npm run dev",
+    "dev:aula08": "cd aula_08_avaliacao_fid_e_sintese_visao_computacional/apresentacao && npm run dev",
     "build:aula01": "cd aula_01_cnn_architectures/apresentacao && npm run build",
     "build:aula02": "cd aula_02_transformers/apresentacao && npm run build",
     "build:aula03": "cd aula_03_fine_tuning_bert/apresentacao && npm run build",
@@ -18,6 +19,7 @@
     "build:aula05": "cd aula_05_advanced_vision_transformers/apresentacao && npm run build",
     "build:aula06": "cd aula_06_clip_openai/apresentacao && npm run build",
     "build:aula07": "cd aula_07_gans_generative_adversarial_networks/apresentacao && npm run build",
+    "build:aula08": "cd aula_08_avaliacao_fid_e_sintese_visao_computacional/apresentacao && npm run build",
     "build": "node build.js",
     "preview": "serve dist",
     "start": "serve dist"
